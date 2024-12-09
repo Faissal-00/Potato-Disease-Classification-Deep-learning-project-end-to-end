@@ -1,0 +1,21 @@
+1) To start docker container
+
+docker run -it -v "G:\agriculture data\agriculture_projects\2-potato disease classification\potato-disease-classification-deep-learning-project-end-to-end:/tf_serving" -p 8501:8501 --entrypoint /bin/bash tensorflow/serving
+
+
+2) To serve only latest model
+
+tensorflow_model_server --rest_api_port=8501 --model_name=potato_disease_model --model_base_path=/tf_serving/saved_models/
+
+
+
+3) To serve models using model config file
+
+tensorflow_model_server --rest_api_port=8501 --model_config_file=/tf_serving/models.config
+
+
+
+1-start container
+2-serve models
+3-run main-tf-serving.py
+4-try on postman
