@@ -1,0 +1,7 @@
+npm install --from-lock-json
+
+npm audit fix
+
+set NODE_OPTIONS=--openssl-legacy-provider
+
+npm run start
