@@ -1,0 +1,37 @@
+API :
+
+gcloud services enable run.googleapis.com
+gcloud services enable cloudfunctions.googleapis.com
+gcloud services enable artifactregistry.googleapis.com
+
+Redeploy :
+
+gcloud functions deploy predict \
+    --runtime python310 \
+    --trigger-http \
+    --memory 1GB \
+    --region us-central1
+
+grant public access :
+https://cloud.google.com/functions/docs/securing/managing-access-iam#console
+
+gcloud functions add-iam-policy-binding predict \
+    --region us-central1 \
+    --member="allUsers" \
+    --role="roles/cloudfunctions.invoker"
+
+check projects :
+
+gcloud projects list
+
+
+switch to another project :
+
+gcloud config set project project_id
+
+quota :
+
+gcloud auth application-default set-quota-project project_id
+
+
+

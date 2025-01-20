@@ -1,0 +1,6 @@
+-create project
+-creat bucket
+-open sdk shell
+-gcloud auth login
+-go to gcp folder
+-gcloud functions deploy predict --runtime python38 --trigger-http --memory 1GB --project project_id
